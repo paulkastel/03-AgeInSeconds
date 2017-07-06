@@ -1,0 +1,46 @@
+﻿1) Cel (Purporse)
+	Aplikacja ma na celu obliczać ile czasu upłynęło od daty urodzin, lub innej podanej daty w przeszłości. Wynik ma podawać w latach, miesiąciach, tygodniach, dniach,
+	godzinach, minutach, sekundach.
+
+2) Use Case
+	a) Opis (desription)
+	- Użytkownik uruchamia aplikację i wprowadza poprzednią date. Następnie program wyświetla na ekranie ile czasu upłynęło od tego momentu. 
+
+	b) Bodziec (trigger)
+	- Start aplikacji przez użytkownika
+
+	c) Aktor (actors)
+	- Użytkownik
+	
+	d) Warunki konieczne (preconditions)
+	- Poprawne liczenie i wyniki oraz poprawna aktualizacja bez ciągłego odświeżania przez użytkownika
+
+	e) Poprawne wykonanie (successful conclusion)
+	- Użytkownik wie ile czasu upłynęło od daty
+
+	f) Błędne wykonanie (failed conclusion)
+	- Błędnie aktualizuje się czas
+	- Ustawiony czas systemowy nie jest poprawny
+	- Wprowadzone dane (czas) są niekompletne lub niepoprawne (np. brakuje miesiąca lub dnia)
+	- Wprowadzona została przyszła data.
+
+	g) Rozszerzenie, dodatkowe funkcjonalności (extensions)
+	- Dodatkowo wyświetla informacje:
+		Jaki to był dzień, 
+		Czy dziś są urodziny
+		Ile ma użytkownik lat,
+		Czy jest pełnoletni.
+		Odlicza też czas do tej samej daty za rok.
+
+	h) kroki wykonania (steps of executions)
+		1. Użytkownik uruchomia aplikację
+			a) Pobranie aktualnego czasu
+			b) Inicjalizacja rozwijanych list z datami
+		2. Użytkownik wprowadza datę
+			a) Sprawdzenie poprawności daty
+		3. Program zwraca wynik z czasem
+		4. Aktualizacja wyniku co sekundę.
+
+
+3) Activity Diagram
+4) Class Diagram

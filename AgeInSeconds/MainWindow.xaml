@@ -1,12 +1,27 @@
-﻿<Window x:Class="AgeInSeconds.MainWindow"
+﻿<Window x:Name="MainWindow1" x:Class="AgeInSecondsWPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AgeInSeconds"
+        xmlns:local="clr-namespace:AgeInSecondsWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+		WindowStartupLocation="CenterScreen"
+        Title="Age In Seconds" Height="350" Width="525" ResizeMode="NoResize" >
+	<Grid Height="322" Width="519">
+		<Grid x:Name="gridYear" Margin="47,66,399,213">
+			<TextBlock x:Name="tbYear" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Year" VerticalAlignment="Top"/>
+			<ComboBox x:Name="cbYear" HorizontalAlignment="Left" Margin="0,21,0,0" VerticalAlignment="Top" Width="73" BorderBrush="#FFBF3232" Foreground="#FFD61A1A" BorderThickness="17,1,1,1" ToolTip="Choose year" SelectedIndex="0" DropDownClosed="cbYear_DropDownClosed"  />
+		</Grid>
+		<Grid x:Name="gridMonth" Margin="125,66,321,213" >
+			<TextBlock x:Name="tbMonth" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Month" VerticalAlignment="Top"/>
+			<ComboBox x:Name="cbMonth" HorizontalAlignment="Left" Margin="0,21,0,0" VerticalAlignment="Top" Width="73" BorderBrush="#FFBF3232" Foreground="#FFD61A1A" BorderThickness="17,1,1,1" ToolTip="Choose month" SelectedIndex="0" DropDownOpened="cbMonth_DropDownOpened" DropDownClosed="cbMonth_DropDownClosed"></ComboBox>
+		</Grid>
+		<Grid x:Name="gridDay" Margin="203,66,243,213">
+			<TextBlock x:Name="tbDay" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Day of month" VerticalAlignment="Top"/>
+			<ComboBox x:Name="cbDay" HorizontalAlignment="Left" Margin="0,21,0,0" VerticalAlignment="Top" Width="73" BorderBrush="#FFBF3232" Foreground="#FFD61A1A" BorderThickness="17,1,1,1" ToolTip="Choose day" SelectedIndex="0" DropDownOpened="cbDay_DropDownOpened" />
+		</Grid>
+
+		<Button x:Name="btnSetToday" Content="Today" HorizontalAlignment="Left" Margin="47,126,0,0" VerticalAlignment="Top" Width="229" Height="36" Click="btnSetToday_Click"/>
+        <Button x:Name="btnCountIt" Content="How many seconds?" HorizontalAlignment="Left" Margin="80,181,0,0" VerticalAlignment="Top" Width="167" Height="35" Click="btncountIt_Click"/>
     </Grid>
 </Window>
