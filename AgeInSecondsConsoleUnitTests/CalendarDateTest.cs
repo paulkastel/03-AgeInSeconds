@@ -15,12 +15,12 @@ namespace AgeInSecondsConsoleUnitTests
       [TestMethod()]
       public void IsDateCorrectIfStringOK1()
       {
-         DateValidateIfIsCorrect("1800-12-5", false);
+         DateValidateIfIsCorrect("1000-12-5", false);
       }
       [TestMethod()]
       public void IsDateCorrectIfStringOK2()
       {
-         DateValidateIfIsCorrect("3002-10-11", false);
+         DateValidateIfIsCorrect("4002-10-11", false);
       }
       [TestMethod()]
       public void IsDateCorrectIfStringOK3()
@@ -56,14 +56,6 @@ namespace AgeInSecondsConsoleUnitTests
          {
             Assert.AreEqual(ex.Message, "Size of array is insignificant!");
          }
-      }
-      [TestMethod()]
-      public void ReturnDateInString()
-      {
-         CalendarDate cd = new CalendarDate(1, 1, 1);
-         string txt = cd.CalculateTime(cd);
-         Assert.AreEqual("", txt);
-
       }
    }
 }

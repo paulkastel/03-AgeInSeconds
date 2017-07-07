@@ -22,32 +22,31 @@ namespace AgeInSecondsConsole
                {
                   if (!Int32.TryParse(splited[i], out date[i]))
                   {
-                     Console.WriteLine("{0} is not an number!", splited[i]);
+                     Console.WriteLine(Properties.Resources.errNotNumber, splited[i]);
                      return cD_err;
                   }
                }
             }
             else
             {
-               Console.WriteLine("Date is not in good format!");
+               Console.WriteLine(Properties.Resources.errNotFormat);
                return cD_err;
             }
          }
          else
          {
-            Console.WriteLine("Date is bad!");
+            Console.WriteLine(Properties.Resources.errNotGood);
             return cD_err;
          }
 
          CalendarDate cD = new CalendarDate(date);
          if (cD.IsDateIsValid())
          {
-            Console.WriteLine("Date is OK!");
             return cD;
          }
          else
          {
-            Console.WriteLine("There is no such date!");
+            Console.WriteLine(Properties.Resources.errNotExist);
             return cD_err;
          }
       }
@@ -58,7 +57,7 @@ namespace AgeInSecondsConsole
       static void Main(string[] args)
       {
          ConsoleHelper consoleHelper = new ConsoleHelper();
-         Console.WriteLine("Hi. Enter date in format: YYYY-MM-DD");
+         Console.WriteLine(Properties.Resources.msgHello);
 
          CalendarDate inputDate = new CalendarDate(1, 1, 1);
 
@@ -72,7 +71,7 @@ namespace AgeInSecondsConsole
             if (inputDate._year == -1 || inputDate._month == -1 || inputDate._day == -1)
             {
                enteredDataisOK = false;
-               Console.Write("Enter correct date: ");
+               Console.Write(Properties.Resources.msgCorrectDate);
             }
             else
             {
@@ -81,7 +80,7 @@ namespace AgeInSecondsConsole
          }
          while (!enteredDataisOK);
 
-         string txt = inputDate.CalculateTime(inputDate);
+         Console.WriteLine(inputDate.CalculateTime(inputDate));
          Console.ReadKey();
       }
    }

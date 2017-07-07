@@ -68,6 +68,7 @@ namespace AgeInSecondsWPF
 		}
 
 		//================================================================
+      //TODO: na liscie elementow zaznaczyc leapyears?
 		private void FillYearComboBox(int years)
 		{
 			cbYear.Items.Clear();
