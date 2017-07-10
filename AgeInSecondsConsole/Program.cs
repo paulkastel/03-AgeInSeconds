@@ -8,12 +8,12 @@ namespace AgeInSecondsConsole
 {
    public class ConsoleHelper
    {
-      public static CalendarDate ParseDate(string textToParse)
+      public static CalendarDate ParseDate(string AtextToParse)
       {
          int[] date = new int[3];
          CalendarDate cD_err = new CalendarDate(-1, -1, -1);
 
-         var splited = textToParse.Split('-');
+         var splited = AtextToParse.Split('-');
          if (splited.Length == 3)
          {
             if (splited[0].Length == 4 && (splited[1].Length <= 2 && splited[1].Length > 0) && (splited[2].Length <= 2 && splited[2].Length > 0))

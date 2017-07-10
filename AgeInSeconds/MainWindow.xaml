@@ -6,22 +6,26 @@
         xmlns:local="clr-namespace:AgeInSecondsWPF"
         mc:Ignorable="d"
 		WindowStartupLocation="CenterScreen"
-        Title="Age In Seconds" Height="350" Width="525" ResizeMode="NoResize" >
-	<Grid Height="322" Width="519">
-		<Grid x:Name="gridYear" Margin="47,66,399,213">
-			<TextBlock x:Name="tbYear" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Year" VerticalAlignment="Top"/>
-			<ComboBox x:Name="cbYear" HorizontalAlignment="Left" Margin="0,21,0,0" VerticalAlignment="Top" Width="73" BorderBrush="#FFBF3232" Foreground="#FFD61A1A" BorderThickness="17,1,1,1" ToolTip="Choose year" SelectedIndex="0" DropDownClosed="cbYear_DropDownClosed"  />
-		</Grid>
-		<Grid x:Name="gridMonth" Margin="125,66,321,213" >
-			<TextBlock x:Name="tbMonth" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Month" VerticalAlignment="Top"/>
-			<ComboBox x:Name="cbMonth" HorizontalAlignment="Left" Margin="0,21,0,0" VerticalAlignment="Top" Width="73" BorderBrush="#FFBF3232" Foreground="#FFD61A1A" BorderThickness="17,1,1,1" ToolTip="Choose month" SelectedIndex="0" DropDownOpened="cbMonth_DropDownOpened" DropDownClosed="cbMonth_DropDownClosed"></ComboBox>
-		</Grid>
-		<Grid x:Name="gridDay" Margin="203,66,243,213">
-			<TextBlock x:Name="tbDay" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Day of month" VerticalAlignment="Top"/>
-			<ComboBox x:Name="cbDay" HorizontalAlignment="Left" Margin="0,21,0,0" VerticalAlignment="Top" Width="73" BorderBrush="#FFBF3232" Foreground="#FFD61A1A" BorderThickness="17,1,1,1" ToolTip="Choose day" SelectedIndex="0" DropDownOpened="cbDay_DropDownOpened" />
-		</Grid>
+        Title="Age In Seconds" Height="446" Width="326.083" ResizeMode="NoResize" >
+   <Grid HorizontalAlignment="Left" Width="320">
 
-		<Button x:Name="btnSetToday" Content="Today" HorizontalAlignment="Left" Margin="47,126,0,0" VerticalAlignment="Top" Width="229" Height="36" Click="btnSetToday_Click"/>
-        <Button x:Name="btnCountIt" Content="How many seconds?" HorizontalAlignment="Left" Margin="80,181,0,0" VerticalAlignment="Top" Width="167" Height="35" Click="btncountIt_Click"/>
-    </Grid>
+      <TextBlock x:Name="tbYear" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Year" VerticalAlignment="Top" Margin="43,21,0,0"/>
+      <ComboBox x:Name="cbYear" HorizontalAlignment="Left" Margin="43,43,0,0" VerticalAlignment="Top" Width="73" BorderBrush="#FFBF3232" Foreground="Black" BorderThickness="17,1,1,1" ToolTip="Choose year" SelectedIndex="0" DropDownClosed="cbYear_DropDownClosed"  />
+
+      <TextBlock x:Name="tbMonth" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Month" VerticalAlignment="Top" Margin="123,21,0,0"/>
+      <ComboBox x:Name="cbMonth" HorizontalAlignment="Left" Margin="123,43,0,0" VerticalAlignment="Top" Width="73" BorderBrush="#FFBF3232" Foreground="#FFD61A1A" BorderThickness="17,1,1,1" ToolTip="Choose month" SelectedIndex="0" DropDownOpened="cbMonth_DropDownOpened" DropDownClosed="cbMonth_DropDownClosed"></ComboBox>
+
+      <TextBlock x:Name="tbDay" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Day of month" VerticalAlignment="Top" Margin="202,21,0,0"/>
+      <ComboBox x:Name="cbDay" HorizontalAlignment="Left" Margin="203,43,0,0" VerticalAlignment="Top" Width="74" BorderBrush="#FFBF3232" Foreground="#FFD61A1A" BorderThickness="17,1,1,1" ToolTip="Choose day" SelectedIndex="0" DropDownOpened="cbDay_DropDownOpened" />
+
+
+      <Button x:Name="btnSetToday" Content="Today" HorizontalAlignment="Left" Margin="42,126,0,0" VerticalAlignment="Top" Width="235" Height="24" Click="btnSetToday_Click" Focusable="False"/>
+      <Button x:Name="btnCountIt" Content="How many seconds?" HorizontalAlignment="Left" Margin="42,71,0,0" VerticalAlignment="Top" Width="236" Height="48" Click="btncountIt_Click" RenderTransformOrigin="0.5,0.5" Focusable="False"></Button>
+
+      <TextBlock x:Name="lblOutputTime" HorizontalAlignment="Left" Margin="43,160,0,0" VerticalAlignment="Top" Height="160" Width="233" TextWrapping="WrapWithOverflow">
+
+      </TextBlock>
+      <TextBlock x:Name="lblOutputEvents" HorizontalAlignment="Left" Margin="43,329,0,0" VerticalAlignment="Top" Height="62" Width="233" TextWrapping="WrapWithOverflow">
+      </TextBlock>
+   </Grid>
 </Window>

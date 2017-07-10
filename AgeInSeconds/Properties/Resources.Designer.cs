@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AgeInSeconds.Properties {
+namespace AgeInSecondsWPF.Properties {
     using System;
     
     
@@ -57,6 +57,138 @@ namespace AgeInSeconds.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is no such date!.
+        /// </summary>
+        internal static string errNotExist {
+            get {
+                return ResourceManager.GetString("errNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date is not in good format!.
+        /// </summary>
+        internal static string errNotFormat {
+            get {
+                return ResourceManager.GetString("errNotFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date is bad!.
+        /// </summary>
+        internal static string errNotGood {
+            get {
+                return ResourceManager.GetString("errNotGood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is not an number!.
+        /// </summary>
+        internal static string errNotNumber {
+            get {
+                return ResourceManager.GetString("errNotNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size of array is insignificant!.
+        /// </summary>
+        internal static string errOnCreateCalDate {
+            get {
+                return ResourceManager.GetString("errOnCreateCalDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter correct date:.
+        /// </summary>
+        internal static string msgCorrectDate {
+            get {
+                return ResourceManager.GetString("msgCorrectDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hi. Enter date in format: YYYY-MM-DD.
+        /// </summary>
+        internal static string msgHello {
+            get {
+                return ResourceManager.GetString("msgHello", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} years {1} months and {2} days ago....
+        /// </summary>
+        internal static string strDate {
+            get {
+                return ResourceManager.GetString("strDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///Viz. {0} days.
+        /// </summary>
+        internal static string strDays {
+            get {
+                return ResourceManager.GetString("strDays", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///Viz. {0} hours.
+        /// </summary>
+        internal static string strHours {
+            get {
+                return ResourceManager.GetString("strHours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///Viz. {0} minutes.
+        /// </summary>
+        internal static string strMinutes {
+            get {
+                return ResourceManager.GetString("strMinutes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///Viz. {0} months.
+        /// </summary>
+        internal static string strMonths {
+            get {
+                return ResourceManager.GetString("strMonths", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///Viz. {0} seconds.
+        /// </summary>
+        internal static string strSeconds {
+            get {
+                return ResourceManager.GetString("strSeconds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///Viz. {0} weeks.
+        /// </summary>
+        internal static string strWeeks {
+            get {
+                return ResourceManager.GetString("strWeeks", resourceCulture);
             }
         }
     }

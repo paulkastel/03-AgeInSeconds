@@ -147,22 +147,22 @@ namespace AgeInSecondsConsole
          return outputTxt;
       }
 
-      public CalendarDate(int y, int m, int d)
+      public CalendarDate(int yr, int mth, int dy)
       {
-         _year = y;
-         _month = m;
-         _day = d;
+         _year = yr;
+         _month = mth;
+         _day = dy;
       }
 
-      public CalendarDate(int[] Adate)
+      public CalendarDate(int[] date)
       {
-         if (Adate.Length < 3)
+         if (date.Length < 3)
             throw new IndexOutOfRangeException(Properties.Resources.errOnCreateCalDate);
          else
          {
-            _year = Adate[0];
-            _month = Adate[1];
-            _day = Adate[2];
+            _year = date[0];
+            _month = date[1];
+            _day = date[2];
          }
       }
    }

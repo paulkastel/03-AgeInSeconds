@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AgeInSecondsConsole
+namespace AgeInSecondsWPF
 {
    /// <summary>
    /// Struct responsible for storing info about Dates
