@@ -46,7 +46,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -121,7 +121,7 @@
     <Resource Include="Doc.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB\birthdayevents.sql" />
+    <Content Include="DB\birthdayTableCreate.sql" />
     <Content Include="DB\HistoricDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -129,7 +129,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>HistoricDB.mdf</DependentUpon>
     </Content>
-    <Content Include="DB\historicevents.sql" />
+    <Content Include="DB\queries.sql" />
+    <Content Include="DB\historicTableCreate.sql" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">

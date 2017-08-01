@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace AgeInSecondsConsoleUnitTests
 {
+   /// <summary>
+   /// Test of class CalendarDate
+   /// </summary>
    [TestClass()]
    public class CalendarDateTestShould
    {

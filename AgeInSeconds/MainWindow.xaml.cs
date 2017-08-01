@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace AgeInSecondsWPF
 {
@@ -22,14 +23,27 @@ namespace AgeInSecondsWPF
       private int _selIdxYear = 0;
 
       private DatabaseConnection DB = new DatabaseConnection();
+
+      /// <summary>
+      /// Date entered by user
+      /// </summary>
       private CalendarDate calDate;
 
       /// <summary>
-      /// App window constructor
+      /// Tool to refresh every second
+      /// </summary>
+      private DispatcherTimer timer;
+
+      /// <summary>
+      /// App window constructor - initialize comboboxes, and timer.
       /// </summary>
       public MainWindow()
       {
          InitializeComponent();
+
+         timer = new DispatcherTimer();
+         timer.Interval = TimeSpan.FromSeconds(1);
+         timer.Tick += timer_Tick;
 
          FillYearComboBox(_currentYear);
          FillMonthComboBox(_currentMonth);
@@ -62,18 +76,22 @@ namespace AgeInSecondsWPF
          _selIdxYear = year;
       }
 
+      /// <summary>
+      /// Fill Year combobox with years since 1582
+      /// </summary>
+      /// <param name="currentYr">Present year</param>
       private void FillYearComboBox(int currentYr)
       {
          cbYear.Items.Clear();
          int tYear = 10000;
 
-         for (int nextYrs = 0; tYear > 1582; nextYrs++)
+         for (int nextYrs = 0; tYear > CalendarDate._minYear; nextYrs++) //that year gregorian calendar was invented
          {
             tYear = currentYr - nextYrs;
             ComboBoxItem item = new ComboBoxItem();
             if (DateTime.IsLeapYear(tYear))
             {
-               item.Foreground = Brushes.Aqua;
+               item.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF898989"));
             }
             item.Content = tYear;
 
@@ -82,6 +100,10 @@ namespace AgeInSecondsWPF
          cbYear.SelectedIndex = _selIdxYear;
       }
 
+      /// <summary>
+      /// Fill Month combobox with months until present month present year
+      /// </summary>
+      /// <param name="currentMth">present month this year</param>
       private void FillMonthComboBox(int currentMth)
       {
          cbMonth.Items.Clear();
@@ -95,6 +117,10 @@ namespace AgeInSecondsWPF
             cbMonth.SelectedIndex = _selIdxMonth;
       }
 
+      /// <summary>
+      /// Fill Day combobox with proper days eg: feb - 28/29, july 31 etc.
+      /// </summary>
+      /// <param name="daysCount">number of days</param>
       private void FillDayComboBox(int daysCount)
       {
          cbDay.Items.Clear();
@@ -120,7 +146,7 @@ namespace AgeInSecondsWPF
          if (_selIdxYear == 0)
             FillMonthComboBox(_currentMonth);   //only up current month
          else
-            FillMonthComboBox(12);  //all months
+            FillMonthComboBox(12);
       }
 
       /// <summary>
@@ -139,7 +165,6 @@ namespace AgeInSecondsWPF
             int year = int.Parse(cbYear.Text.ToString());
             int month = cbMonth.SelectedIndex + 1;
             FillDayComboBox(DateTime.DaysInMonth(year, month));
-
          }
       }
 
@@ -159,7 +184,6 @@ namespace AgeInSecondsWPF
          }
 
          cbMonth_DropDownClosed(sender, e);
-
       }
 
       /// <summary>
@@ -195,23 +219,39 @@ namespace AgeInSecondsWPF
          SetComboboxesForToday();
       }
 
-      //TODO updating everysceond 1962
+      /// <summary>
+      /// Update label with time difference every second
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
+      void timer_Tick(object sender, EventArgs e)
+      {
+         lblOutputTime.Text = calDate.CalculateTime(calDate);
+      }
+
+      /// <summary>
+      /// On btnclick show difference in time, and fun fact from past 
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
       private void btncountIt_Click(object sender, RoutedEventArgs e)
       {
-         calDate = new CalendarDate(int.Parse(cbYear.Text), int.Parse((_selIdxMonth+1).ToString()), int.Parse((_selIdxDay + 1).ToString()));
-         List<Object> dHistoric = DB.getImportantDates(calDate);
-         List<Object> dBirthday = DB.getFamousBirthdayDates(calDate);
-
-         string strHistory = string.Empty;
-
-         foreach (var evt in dHistoric)
-         {
-            strHistory += evt.ToString()+"\n";
-         }
-         strHistory.Replace("\n", Environment.NewLine);
-         lblOutputEvents.Text = strHistory;
-
+         lblOutputEvents.Text = string.Empty;
+         SaveSelectedIndexes(cbYear.SelectedIndex, cbMonth.SelectedIndex, cbDay.SelectedIndex);
+         calDate = new CalendarDate(int.Parse(cbYear.Text), int.Parse((_selIdxMonth + 1).ToString()), int.Parse((_selIdxDay + 1).ToString()));
          lblOutputTime.Text = calDate.CalculateTime(calDate);
+         timer.Start();
+
+         List<Object> dList = new List<Object>();
+         dList.AddRange(DB.getImportantDates(calDate));
+         dList.AddRange(DB.getFamousBirthdayDates(calDate));
+
+         if (dList.Count != 0)
+         {
+            Random random = new Random();
+            int randomNumber = random.Next(0, dList.Count);
+            lblOutputEvents.Text = "- " + dList[randomNumber];
+         }
       }
    }
 }

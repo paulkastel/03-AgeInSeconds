@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace AgeInSecondsConsole.Tests
 {
+   /// <summary>
+   /// Test of ConsoleHelper
+   /// </summary>
    [TestClass()]
    public class ConsoleHelperShould
    {

@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 namespace AgeInSecondsWPFUnitTests
 {
    /// <summary>
-   /// Summary description for Database
+   /// Class tested
    /// </summary>
    [TestClass]
    public class DatabaseShould

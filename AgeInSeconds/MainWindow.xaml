@@ -8,24 +8,79 @@
 		WindowStartupLocation="CenterScreen"
         Title="Age In Seconds" Height="446" Width="326.083" ResizeMode="NoResize" >
    <Grid HorizontalAlignment="Left" Width="320">
+      <Grid.Background>
+         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFB9D1EA" Offset="1"/>
+            <GradientStop Color="White"/>
+         </LinearGradientBrush>
+      </Grid.Background>
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="39*"/>
+         <ColumnDefinition Width="281*"/>
+      </Grid.ColumnDefinitions>
 
-      <TextBlock x:Name="tbYear" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Year" VerticalAlignment="Top" Margin="43,21,0,0"/>
-      <ComboBox x:Name="cbYear" HorizontalAlignment="Left" Margin="43,43,0,0" VerticalAlignment="Top" Width="73" BorderBrush="#FFBF3232" Foreground="Black" BorderThickness="17,1,1,1" ToolTip="Choose year" SelectedIndex="0" DropDownClosed="cbYear_DropDownClosed"  />
+      <TextBlock x:Name="tbYear" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Year" VerticalAlignment="Top" Margin="4,21,0,0" Grid.Column="1"/>
+      <ComboBox x:Name="cbYear" HorizontalAlignment="Left" Margin="4,43,0,0" VerticalAlignment="Top" Width="73" BorderThickness="17,1,1,1" ToolTip="Choose year" SelectedIndex="0" DropDownClosed="cbYear_DropDownClosed" Grid.Column="1"  >
+         <ComboBox.Background>
+            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+               <GradientStop Color="#FFF3F3F3" Offset="0"/>
+               <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+               <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+               <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+         </ComboBox.Background>
+      </ComboBox>
 
-      <TextBlock x:Name="tbMonth" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Month" VerticalAlignment="Top" Margin="123,21,0,0"/>
-      <ComboBox x:Name="cbMonth" HorizontalAlignment="Left" Margin="123,43,0,0" VerticalAlignment="Top" Width="73" BorderBrush="#FFBF3232" Foreground="#FFD61A1A" BorderThickness="17,1,1,1" ToolTip="Choose month" SelectedIndex="0" DropDownOpened="cbMonth_DropDownOpened" DropDownClosed="cbMonth_DropDownClosed"></ComboBox>
+      <TextBlock x:Name="tbMonth" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Month" VerticalAlignment="Top" Margin="84,21,0,0" Grid.Column="1"/>
+      <ComboBox x:Name="cbMonth" HorizontalAlignment="Left" Margin="84,43,0,0" VerticalAlignment="Top" Width="73" BorderThickness="17,1,1,1" ToolTip="Choose month" SelectedIndex="0" DropDownOpened="cbMonth_DropDownOpened" DropDownClosed="cbMonth_DropDownClosed" Grid.Column="1">
+         <ComboBox.Background>
+            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+               <GradientStop Color="#FFF3F3F3" Offset="0"/>
+               <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+               <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+               <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+         </ComboBox.Background>
+      </ComboBox>
 
-      <TextBlock x:Name="tbDay" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Day of month" VerticalAlignment="Top" Margin="202,21,0,0"/>
-      <ComboBox x:Name="cbDay" HorizontalAlignment="Left" Margin="203,43,0,0" VerticalAlignment="Top" Width="74" BorderBrush="#FFBF3232" Foreground="#FFD61A1A" BorderThickness="17,1,1,1" ToolTip="Choose day" SelectedIndex="0" DropDownOpened="cbDay_DropDownOpened" />
+      <TextBlock x:Name="tbDay" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Day of month" VerticalAlignment="Top" Margin="163,21,0,0" Grid.Column="1"/>
+      <ComboBox x:Name="cbDay" HorizontalAlignment="Left" Margin="164,43,0,0" VerticalAlignment="Top" Width="74" BorderThickness="17,1,1,1" ToolTip="Choose day" SelectedIndex="0" DropDownOpened="cbDay_DropDownOpened" Grid.Column="1" >
+         <ComboBox.Background>
+            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+               <GradientStop Color="#FFF3F3F3" Offset="0"/>
+               <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+               <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+               <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+         </ComboBox.Background>
+      </ComboBox>
 
 
-      <Button x:Name="btnSetToday" Content="Today" HorizontalAlignment="Left" Margin="42,126,0,0" VerticalAlignment="Top" Width="235" Height="24" Click="btnSetToday_Click" Focusable="False"/>
-      <Button x:Name="btnCountIt" Content="How many seconds?" HorizontalAlignment="Left" Margin="42,71,0,0" VerticalAlignment="Top" Width="236" Height="48" Click="btncountIt_Click" RenderTransformOrigin="0.5,0.5" Focusable="False"></Button>
+      <Button x:Name="btnSetToday" Content="Today" HorizontalAlignment="Left" Margin="3,126,0,0" VerticalAlignment="Top" Width="235" Height="24" Click="btnSetToday_Click" Focusable="False" Grid.Column="1" FontSize="14">
+         <Button.Background>
+            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+               <GradientStop Color="#FFF3F3F3" Offset="0"/>
+               <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+               <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+               <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+         </Button.Background>
+      </Button>
+      <Button x:Name="btnCountIt" Content="How many seconds?" HorizontalAlignment="Left" Margin="3,71,0,0" VerticalAlignment="Top" Width="236" Height="48" Click="btncountIt_Click" RenderTransformOrigin="0.5,0.5" Focusable="False" Grid.Column="1" FontSize="22">
+         <Button.Background>
+            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+               <GradientStop Color="#FFF3F3F3" Offset="0"/>
+               <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+               <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+               <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+         </Button.Background>
+      </Button>
 
-      <TextBlock x:Name="lblOutputTime" HorizontalAlignment="Left" Margin="43,160,0,0" VerticalAlignment="Top" Height="160" Width="233" TextWrapping="WrapWithOverflow">
+      <TextBlock x:Name="lblOutputTime" HorizontalAlignment="Left" Margin="4,160,0,0" VerticalAlignment="Top" Height="160" Width="233" TextWrapping="WrapWithOverflow" Grid.Column="1">
 
       </TextBlock>
-      <TextBlock x:Name="lblOutputEvents" HorizontalAlignment="Left" Margin="43,329,0,0" VerticalAlignment="Top" Height="62" Width="233" TextWrapping="WrapWithOverflow">
+      <TextBlock x:Name="lblOutputEvents" HorizontalAlignment="Left" Margin="4,329,0,0" VerticalAlignment="Top" Height="62" Width="233" TextWrapping="WrapWithOverflow" Grid.Column="1">
       </TextBlock>
    </Grid>
 </Window>

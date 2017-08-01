@@ -4,7 +4,7 @@
 
 2) Use Case
 	a) Opis (desription)
-	- Użytkownik uruchamia aplikację i wprowadza poprzednią date. Następnie program wyświetla na ekranie ile czasu upłynęło od tego momentu. 
+	- Użytkownik uruchamia aplikację i wprowadza date. Następnie program wyświetla na ekranie ile czasu upłynęło od tego momentu. 
 
 	b) Bodziec (trigger)
 	- Start aplikacji przez użytkownika
@@ -16,7 +16,7 @@
 	- Poprawne liczenie i wyniki oraz poprawna aktualizacja bez ciągłego odświeżania przez użytkownika
 
 	e) Poprawne wykonanie (successful conclusion)
-	- Użytkownik wie ile czasu upłynęło od daty
+	- Użytkownik dowiaduje się ile czasu upłynęło od daty
 
 	f) Błędne wykonanie (failed conclusion)
 	- Błędnie aktualizuje się czas
@@ -40,7 +40,6 @@
 			a) Sprawdzenie poprawności daty
 		3. Program zwraca wynik z czasem
 		4. Aktualizacja wyniku co sekundę.
-
 
 3) Activity Diagram
 4) Class Diagram
